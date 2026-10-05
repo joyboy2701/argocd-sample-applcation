@@ -8,7 +8,7 @@ resources:
 
 replicas:
   - name: demo-nginx
-    count: 2
+    count: 4
 
 images:
   - name: nginx
