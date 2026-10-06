@@ -1,0 +1,11 @@
+commonLabels:
+  - group: argoproj.io
+    version: v1alpha1
+    kind: Rollout
+    path: spec/selector/matchLabels
+    create: true
+  - group: argoproj.io
+    version: v1alpha1
+    kind: Rollout
+    path: spec/template/metadata/labels
+    create: true

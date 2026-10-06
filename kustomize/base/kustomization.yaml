@@ -2,8 +2,11 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - deployment.yaml
+  - rollout.yaml
   - service.yaml
+
+configurations:
+  - kustomizeconfig.yaml
 
 commonLabels:
   app.kubernetes.io/name: demo-nginx

@@ -6,9 +6,16 @@ namespace: demo
 resources:
   - ../../base
 
-replicas:
-  - name: demo-nginx
-    count: 1
+patches:
+  - target:
+      group: argoproj.io
+      version: v1alpha1
+      kind: Rollout
+      name: demo-nginx
+    patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 1
 
 images:
   - name: nginx
